@@ -61,13 +61,16 @@ const email = ref('')
 
 <style scoped>
 .footer {
-  /* Dark footer theme — overrides the global light vars for all children */
-  --line: rgba(255, 255, 255, .14);
-  --text: #f5f1ea;
-  --text-dim: rgba(245, 241, 234, .58);
-  --accent: #c79a5b;
-  background: #16120e;
-  border-top: 1px solid rgba(255, 255, 255, .08);
+  /* Amber-on-earthy-green theme — overrides the global light vars for all children */
+  --line: rgba(226, 164, 55, .20);
+  --text: #f4efe2;
+  --text-dim: rgba(244, 239, 226, .60);
+  --accent: #e2a437;
+  position: relative;
+  background:
+    radial-gradient(120% 90% at 85% 0%, rgba(226, 164, 55, .10), transparent 60%),
+    linear-gradient(180deg, #182520 0%, #121b17 100%);
+  border-top: 2px solid var(--accent);
   padding: 84px 0 32px;
 }
 .footer-grid {
@@ -130,6 +133,18 @@ const email = ref('')
   font-size: 14px;
 }
 .news-form input:focus { outline: none; border-color: var(--accent); }
+.news-form .btn-solid {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #1b140a;
+  font-weight: 500;
+  transition: background .3s ease, border-color .3s ease, transform .3s ease;
+}
+.news-form .btn-solid:hover {
+  background: #f0b955;
+  border-color: #f0b955;
+  transform: translateY(-2px);
+}
 .footer-bottom {
   display: flex;
   justify-content: space-between;
